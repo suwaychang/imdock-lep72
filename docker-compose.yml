@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+
+    #--------------------------------------
+    # Web Service
+    #--------------------------------------
+    imdock-cnp7:
+        restart: always
+        image: suwaychang0608/imdock:lep72
+#        build:
+#          context: .
+#          dockerfile: Dockerfile
+        container_name: {project-sn}
+        working_dir: /var/www
+        ports:
+            - "2002:80"
+#            - "443:443"
+#            - "8122:22"
+#            - "9100:9000"
+        volumes:
+          - ./website:/var/www
+          - ./sites-enable:/etc/nginx/conf.d
+          - ./conf/nginx.conf:/etc/nginx/nginx.conf
+          - ./conf/php-ini-overrides.ini:/etc/php.d/zzz-overrides.ini
+          #- ./conf/supervisord.conf:/etc/supervisor/supervisord.conf
+          #- ~/.ssh:/root/.ssh
+          #- ../ssl:/etc/nginx/ssl
+
+
+networks:
+    default:
+        external:
+            name: imdockgroup
