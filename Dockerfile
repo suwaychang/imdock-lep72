@@ -11,6 +11,8 @@ RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY*
 
 #Install Tools
 RUN yum -y install nano wget tar epel-release
+RUN yum -y groupinstall development
+RUN yum -y install perl-CPAN zlib zlib-devel curl-devel
 
 #Install php 7.2.0
 RUN rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-7.rpm
