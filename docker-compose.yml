@@ -7,7 +7,7 @@ services:
     #--------------------------------------
     imdock-cnp7:
         restart: always
-        image: suwaychang0608/imdock:lep72
+        image: suwaychang0608/imdock-lep72
 #        build:
 #          context: .
 #          dockerfile: Dockerfile
