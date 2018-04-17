@@ -19,9 +19,7 @@ RUN rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 RUN yum -y install yum-utils
 RUN yum -y update
 RUN yum-config-manager --enable remi-php72
-RUN yum -y install php php-*
-
-
+RUN yum -y install php php-opcache php-fpm php-mbstring php-xml php-mysql php-pdo php-gd php-pecl-imagick php-pecl-memcache php-intl php-pecl-xdebug php-pecl-zip
 
 #Enabling Additional CentOS Repositories
 RUN touch /etc/yum.repos.d/nginx.repo && \
